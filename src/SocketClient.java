@@ -17,12 +17,13 @@ public class SocketClient {
         ObjectOutputStream oos;
         ObjectInputStream ois;
         String input;
+        int port = 9876;
         
         boolean exit = false;
 
         while (!exit) {
             //establish socket connection to server
-            socket = new Socket(host.getHostName(), 8080);
+            socket = new Socket(host.getHostName(), port);
             //write to socket using ObjectOutputStream
             oos = new ObjectOutputStream(socket.getOutputStream());
             input = in.next();
