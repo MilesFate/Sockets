@@ -38,6 +38,7 @@ public class SocketServer {
             if(message.equalsIgnoreCase("exit")) break;
         }
         System.out.println("Shutting down Socket server!!");
+        System.out.println("Hello Friend");
         //close the ServerSocket object
         server.close();
     }
