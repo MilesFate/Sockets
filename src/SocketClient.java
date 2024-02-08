@@ -18,7 +18,7 @@ public class SocketClient {
         ObjectInputStream ois;
         String input;
         int port = 9876;
-        
+
         boolean exit = false;
 
         while (!exit) {
@@ -26,13 +26,13 @@ public class SocketClient {
             socket = new Socket(host.getHostName(), port);
             //write to socket using ObjectOutputStream
             oos = new ObjectOutputStream(socket.getOutputStream());
+            System.out.print(">");
             input = in.next();
             oos.writeObject(input);
-
             //read the server response message
             ois = new ObjectInputStream(socket.getInputStream());
             String message = (String) ois.readObject();
-            System.out.println("Message: " + message);
+            System.out.println("Server: " + message);
             ois.close();
             oos.close();
             socket.close();
